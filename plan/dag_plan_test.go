@@ -50,7 +50,7 @@ func (s *testPlanSuite) TestDAGPlanBuilderSimpleCase(c *C) {
 			sql:  "select * from t t1 use index(e)",
 			best: "TableReader(Table(t))",
 		},
-		// Test index hint.
+		// Test index hint. trigger test.
 		{
 			sql:  "select * from t t1 use index(c_d_e)",
 			best: "IndexLookUp(Index(t.c_d_e)[[<nil>,+inf]], Table(t))",
